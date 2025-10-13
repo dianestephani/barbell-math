@@ -14,7 +14,7 @@
 
     <!-- Target Weight box -->
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Target Weight</label>
+      <label for="exampleFormControlInput1" class="form-label">Target Weight (#s)</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ex. 135, 235">
     </div>
 
@@ -25,7 +25,7 @@
     <!-- Form Select -->
 
     <select class="form-select" aria-label="Default select example">
-      <option selected>Choose bar weight</option>
+      <option selected>Choose bar weight (#)</option>
       <option value="1">15</option>
       <option value="2">35</option>
       <option value="3">45</option>
@@ -43,20 +43,18 @@
     <br/>
     <br/>
 
-    <!-- Calculation Test Box -->
-    <div class="mb-3" style="max-width: 200px;">
+    <!-- Calculation Test Box (hidden but still used by functions) -->
+    <div class="mb-3" style="max-width: 200px; display: none;">
       <label for="calculationTest" class="form-label">Calculation Test</label>
       <input type="text" class="form-control" id="calculationTest" readonly>
     </div>
-
-    <br/>
 
     <!-- Bumper Plate Display -->
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th scope="col">Weight</th>
-          <th scope="col">Quantity</th>
+          <th scope="col">Weight (#)</th>
+          <th scope="col">Quantity (Per Side)</th>
         </tr>
       </thead>
       <tbody>
