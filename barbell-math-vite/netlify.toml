@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "barbell-math-vite/dist"
+  publish = "/dist"
 
 [[redirects]]
   from = "/*"
