@@ -9,6 +9,7 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/init.js"></script>
     <h1>Barbell Math Machine</h1>
 
 
@@ -92,16 +93,6 @@
         </tr>
       </tbody>
     </table>
-
-    <script type="module">
-      import { calculateTestValue } from './src/barbellMath.js';
-
-      // Attach event listener
-      const calculateButton = document.getElementById('calculateButton');
-      if (calculateButton) {
-        calculateButton.addEventListener('click', calculateTestValue);
-      }
-    </script>
      
 
 
