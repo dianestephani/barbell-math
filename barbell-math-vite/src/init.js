@@ -1,4 +1,5 @@
 // Initialize barbell math functionality
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { calculateTestValue } from './barbellMath.js';
 
 // Wait for DOM to be ready, then attach event listener
