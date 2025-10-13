@@ -26,11 +26,11 @@
 
     <select class="form-select" aria-label="Default select example">
       <option selected>Choose bar weight</option>
-      <option value="1">15#</option>
-      <option value="2">35#</option>
-      <option value="3">45#</option>
-      <option value="4">58#</option>
-      <option value="5">65#</option>
+      <option value="1">15</option>
+      <option value="2">35</option>
+      <option value="3">45</option>
+      <option value="4">58</option>
+      <option value="5">65</option>
       
     </select>
 
@@ -38,9 +38,17 @@
     <br/>
 
     <!-- Button -->
-    <button type="button" class="btn btn-info">Calculate</button>
+    <button type="button" class="btn btn-info" id="calculateButton">Calculate</button>
 
     <br/>
+    <br/>
+
+    <!-- Calculation Test Box -->
+    <div class="mb-3" style="max-width: 200px;">
+      <label for="calculationTest" class="form-label">Calculation Test</label>
+      <input type="text" class="form-control" id="calculationTest" readonly>
+    </div>
+
     <br/>
 
     <!-- Bumper Plate Display -->
@@ -86,6 +94,16 @@
         </tr>
       </tbody>
     </table>
+
+    <script type="module">
+      import { calculateTestValue } from './src/barbellMath.js';
+
+      // Attach event listener
+      const calculateButton = document.getElementById('calculateButton');
+      if (calculateButton) {
+        calculateButton.addEventListener('click', calculateTestValue);
+      }
+    </script>
      
 
 
