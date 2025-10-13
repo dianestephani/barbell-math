@@ -1,5 +1,4 @@
 [build]
-  base = "barbell-math-vite"
   command = "npm run build"
   publish = "barbell-math-vite/dist"
 
