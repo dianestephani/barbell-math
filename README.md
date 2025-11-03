@@ -5,4 +5,4 @@ The Barbell Math Machine was created with both coaches and clients in mind. The 
 
 ---
 
-*The Barbell Math Machine is a React app built using Vite.*
+*The Barbell Math Machine is a React app built using Vite. It's deployed [here](https://68ec726d7673390008af7a92--barbell-math-machine.netlify.app/).*
