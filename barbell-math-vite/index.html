@@ -4,10 +4,114 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Barbell Math Machine</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/init.js"></script>
+    <h1>Barbell Math Machine</h1>
+    
+    <p>
+      This application is designed to help weightlifters determine how much weight they need to put on each side of the barbell to achieve their target weight. Input how much weight you're trying to lift (your target weight), select the weight of the bar you're using, and then select which plates your gym has. Once you hit "calculate", the app will tell you how much weight to put on each side of the bar, and which plates/how many of each to use for the most optimal build.
+    </p>
+
+    <br />
+
+
+    <!-- Target Weight box -->
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Target Weight (in #s)</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter the weight you're trying to lift">
+    </div>
+
+    <br/>
+    <br/>
+ 
+
+    <!-- Form Select -->
+
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Choose bar weight (#)</option>
+      <option value="1">15</option>
+      <option value="2">35</option>
+      <option value="3">45</option>
+      <option value="4">58</option>
+      <option value="5">65</option>
+      
+    </select>
+
+    <br/>
+    <br/>
+
+    <!-- Button -->
+    <button type="button" class="btn btn-info" id="calculateButton">Calculate</button>
+
+    <br/>
+    <br/>
+
+    <!-- Calculation Test Box (hidden but still used by functions) -->
+    <div class="mb-3" style="max-width: 200px; display: none;">
+      <label for="calculationTest" class="form-label">Calculation Test</label>
+      <input type="text" class="form-control" id="calculationTest" readonly>
+    </div>
+
+    <!-- Weight Per Side Display -->
+    <div class="mb-3" style="max-width: 200px;">
+      <label for="weightPerSide" class="form-label">Weight Per Side (#)</label>
+      <input type="text" class="form-control" id="weightPerSide" readonly>
+    </div>
+
+    <br />
+
+    <!-- Bumper Plate Display -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Weight (#)</th>
+          <th scope="col">Quantity (Per Side)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>45#</span><input type="checkbox" id="checkbox-45" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-45" readonly></td>
+        </tr>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>35#</span><input type="checkbox" id="checkbox-35" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-35" readonly></td>
+        </tr>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>25#</span><input type="checkbox" id="checkbox-25" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-25" readonly></td>
+        </tr>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>15#</span><input type="checkbox" id="checkbox-15" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-15" readonly></td>
+        </tr>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>10#</span><input type="checkbox" id="checkbox-10" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-10" readonly></td>
+        </tr>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>5#</span><input type="checkbox" id="checkbox-5" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-5" readonly></td>
+        </tr>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>2.5#</span><input type="checkbox" id="checkbox-2-5" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-2-5" readonly></td>
+        </tr>
+        <tr>
+          <td><div style="display: flex; justify-content: space-between; align-items: center;"><span>1.25#</span><input type="checkbox" id="checkbox-1-25" checked></div></td>
+          <td><input type="text" class="form-control" id="weight-1-25" readonly></td>
+        </tr>
+      </tbody>
+    </table>
+     
+
+
+
+
+
   </body>
 </html>
