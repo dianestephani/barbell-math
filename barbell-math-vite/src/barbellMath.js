@@ -59,19 +59,40 @@ export function calculateBumperPlates() {
   // Validate input
   if (!remainingWeight || isNaN(remainingWeight)) {
     clearBumperPlateTable();
+    document.getElementById('weightPerSide').value = '';
     return;
   }
 
   // Since weight is distributed on both sides of the bar, divide by 2
-  remainingWeight = remainingWeight / 2;
+  const weightPerSide = remainingWeight / 2;
+
+  // Display the weight per side
+  document.getElementById('weightPerSide').value = weightPerSide;
+
+  remainingWeight = weightPerSide;
 
   // Available plate weights in descending order (optimal greedy approach)
-  const plateWeights = [45, 35, 25, 15, 10, 5, 2.5, 1.25];
+  // Only include weights where the checkbox is checked
+  const allPlateWeights = [
+    { weight: 45, checkboxId: 'checkbox-45' },
+    { weight: 35, checkboxId: 'checkbox-35' },
+    { weight: 25, checkboxId: 'checkbox-25' },
+    { weight: 15, checkboxId: 'checkbox-15' },
+    { weight: 10, checkboxId: 'checkbox-10' },
+    { weight: 5, checkboxId: 'checkbox-5' },
+    { weight: 2.5, checkboxId: 'checkbox-2-5' },
+    { weight: 1.25, checkboxId: 'checkbox-1-25' }
+  ];
+
+  // Filter to only include checked plates
+  const availablePlateWeights = allPlateWeights
+    .filter(plate => document.getElementById(plate.checkboxId)?.checked)
+    .map(plate => plate.weight);
 
   // Calculate quantities for each plate
   const plateQuantities = {};
 
-  for (const plateWeight of plateWeights) {
+  for (const plateWeight of availablePlateWeights) {
     const quantity = Math.floor(remainingWeight / plateWeight);
     plateQuantities[plateWeight] = quantity;
     remainingWeight -= quantity * plateWeight;
