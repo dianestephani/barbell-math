@@ -30,18 +30,29 @@ The Barbell Math Machine solves a common problem in weightlifting: quickly calcu
 - **Vite 6.3.6** - Build tool and development server
 - **Bootstrap 5.3.3** - CSS framework for styling
 - **JavaScript (ES6+)** - Core programming language
+- **Jest 30.2.0** - Testing framework
+- **React Testing Library** - Component testing utilities
 
 ### Project Structure
 
 ```
 barbell-math-vite/
 ├── src/
-│   ├── barbellMath.js      # Core calculation logic
-│   ├── main.jsx            # React entry point
-│   └── init.js             # Initialization script
-├── index.html              # Main HTML template
-├── package.json            # Dependencies and scripts
-└── vite.config.js          # Vite configuration
+│   ├── barbellMath.js          # Core calculation logic
+│   ├── barbellMath.test.js     # Unit tests for calculations
+│   ├── App.jsx                 # Main App component
+│   ├── App.test.jsx            # App component tests
+│   ├── main.jsx                # React entry point
+│   ├── init.js                 # Initialization script
+│   └── init.test.js            # Init script tests
+├── __mocks__/
+│   └── styleMock.js            # CSS module mock for tests
+├── index.html                  # Main HTML template
+├── package.json                # Dependencies and scripts
+├── vite.config.js              # Vite configuration
+├── jest.config.cjs             # Jest configuration
+├── babel.config.cjs            # Babel configuration for tests
+└── jest.setup.js               # Jest setup file
 ```
 
 ### Algorithm
@@ -90,6 +101,9 @@ npm run dev
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint to check code quality
+- `npm test` - Run all tests once
+- `npm run test:watch` - Run tests in watch mode (re-runs on file changes)
+- `npm run test:coverage` - Run tests with coverage report
 
 ## Usage
 
@@ -117,6 +131,55 @@ npm run dev
   - 0x 1.25# plates
 
 ## Development
+
+### Testing
+
+The project includes a comprehensive test suite built with Jest and React Testing Library, ensuring code reliability and maintainability.
+
+#### Test Coverage
+
+The test suite includes 25 tests with **89.28% code coverage**:
+
+- **barbellMath.js** (96.07% coverage)
+  - 23 unit tests covering calculation functions
+  - Tests for multiple bar weights (15#, 35#, 45#, 58#, 65#)
+  - Edge case handling (invalid inputs, decimal weights, zero values)
+  - Greedy algorithm validation
+  - Plate selection filtering
+
+- **App.jsx** (100% coverage)
+  - Component rendering tests
+
+- **init.js** (tested indirectly)
+  - Event listener attachment
+  - DOM initialization
+
+#### Running Tests
+
+```bash
+# Run all tests once
+npm test
+
+# Run tests in watch mode (recommended during development)
+npm run test:watch
+
+# Generate coverage report
+npm run test:coverage
+```
+
+#### Test Organization
+
+Each source file has a corresponding test file:
+
+- `barbellMath.js` → `barbellMath.test.js`
+- `App.jsx` → `App.test.jsx`
+- `init.js` → `init.test.js`
+
+Tests use Jest's `describe` and `test` blocks for clear organization and include:
+
+- Setup using `beforeEach` hooks for DOM elements
+- Comprehensive assertions using Jest matchers
+- DOM manipulation testing with jsdom environment
 
 ### Code Quality
 
