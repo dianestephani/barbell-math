@@ -2,6 +2,8 @@
 
 A web application designed to help weightlifters calculate optimal plate distribution for their target lifting weight. This tool simplifies the process of determining which plates to load on each side of the barbell, taking into account available equipment and bar weight.
 
+**Live Demo:** [https://68ec726d7673390008af7a92--barbell-math-machine.netlify.app/](https://68ec726d7673390008af7a92--barbell-math-machine.netlify.app/)
+
 ## Overview
 
 The Barbell Math Machine solves a common problem in weightlifting: quickly calculating how to load a barbell to achieve a specific target weight. Users input their desired weight, select their bar type, and specify which plates are available at their gym. The application then calculates the optimal distribution of plates needed on each side of the bar using a greedy algorithm approach.
