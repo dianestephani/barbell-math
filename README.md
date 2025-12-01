@@ -2,7 +2,7 @@
 
 A web application designed to help weightlifters calculate optimal plate distribution for their target lifting weight. This tool simplifies the process of determining which plates to load on each side of the barbell, taking into account available equipment and bar weight.
 
-**Live Demo:** [https://68ec726d7673390008af7a92--barbell-math-machine.netlify.app/](https://68ec726d7673390008af7a92--barbell-math-machine.netlify.app/)
+**Live Demo:** [https://barbell-math-machine.netlify.app/](https://barbell-math-machine.netlify.app/)
 
 ## Overview
 
